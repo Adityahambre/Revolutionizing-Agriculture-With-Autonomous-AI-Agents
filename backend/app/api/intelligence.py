@@ -1,3 +1,4 @@
+from app.data_sources.market import get_mandi_prices
 from pydantic import BaseModel, Field
 from typing import Optional
 from app.data_sources.soil import analyze_soil
@@ -122,3 +123,27 @@ def soil_intelligence(request: SoilAnalysisRequest):
         return analyze_soil(**request.model_dump())
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error))
+@router.get("/market")
+async def market_intelligence(
+    state: str = Query(min_length=2),
+    commodity: Optional[str] = Query(default=None),
+    limit: int = Query(default=20, ge=1, le=100),
+    offset: int = Query(default=0, ge=0)
+):
+    """
+    Retrieve real mandi prices from the data.gov.in AGMARKNET dataset.
+    """
+
+    try:
+        return await get_mandi_prices(
+            state=state,
+            commodity=commodity,
+            limit=limit,
+            offset=offset
+        )
+
+    except ValueError as error:
+        raise HTTPException(
+            status_code=502,
+            detail=str(error)
+        )

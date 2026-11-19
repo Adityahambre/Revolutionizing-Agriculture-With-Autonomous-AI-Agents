@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     app_name: str = "AgriNova"
     debug: bool = True
     database_url: str
+    data_gov_api_key: str = ""
 
     jwt_secret_key: str
     otp_hash_secret: str
@@ -19,6 +20,9 @@ class Settings(BaseSettings):
     otp_expiry_minutes: int = 5
     otp_resend_cooldown_seconds: int = 60
     otp_max_attempts: int = 5
+
+    # Government mandi data API
+    data_gov_in_api_key: str | None = None
 
 
 settings = Settings()

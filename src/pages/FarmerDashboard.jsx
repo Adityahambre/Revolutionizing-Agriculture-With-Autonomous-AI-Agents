@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef } from "react";
 import { Activity, CloudSun, Droplets, Leaf, MapPin, Sprout, TrendingUp, ScanLine, Recycle, ArrowRight, Pencil, LoaderCircle } from "lucide-react";
 import { apiPost } from "../services/api";
 import "../styles/AgriWorkspace.css";
@@ -116,6 +116,7 @@ function FarmerDashboard() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [diseaseImageName, setDiseaseImageName] = useState("");
+  const workspaceRef = useRef(null);
 
   const activeAgent = agentDefinitions.find((agent) => agent.id === activeId);
   const activeFields = activeAgent?.fields || harvestFields;
@@ -126,6 +127,11 @@ function FarmerDashboard() {
     setResult(null);
     setError("");
     setDiseaseImageName("");
+  
+    workspaceRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   };
 
   const runAgent = async (event) => {
@@ -176,9 +182,19 @@ function FarmerDashboard() {
 
   const openHarvest = () => {
     setActiveId("post-harvest");
-    setValues({ crop: farm.crop || "tomato", quantity_quintals: 10, quality: "good", storage_available: "no" });
+    setValues({
+      crop: farm.crop || "tomato",
+      quantity_quintals: 10,
+      quality: "good",
+      storage_available: "no"
+    });
     setResult(null);
     setError("");
+  
+    workspaceRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   };
 
   const isHarvest = activeId === "post-harvest";
@@ -234,7 +250,7 @@ function FarmerDashboard() {
         </div>
       </section>
 
-      <section className="agr-agent-workspace">
+      <section className="agr-agent-workspace" ref={workspaceRef}>
         <div className="agr-workspace-heading">
           <div><span className="dashboard-eyebrow">AGENT WORKSPACE</span><h2>{activeTitle}</h2></div>
           <span className="agr-rule-badge">Rule-based decision support</span>
@@ -263,7 +279,7 @@ function FarmerDashboard() {
             {result.recommendations && Array.isArray(result.recommendations) && result.recommendations.length > 0 && typeof result.recommendations[0] === "object" ? (
               <div className="agr-crop-results">{result.recommendations.map((item, index) => <article key={item.crop || index}><strong>{index + 1}. {item.crop || "Recommendation"}</strong><span>{item.suitability_score !== undefined ? `Suitability score: ${item.suitability_score}/100` : ""}</span>{item.reasons?.map((reason) => <small key={reason}>• {reason}</small>)}</article>)}</div>
             ) : null}
-            <pre className="agr-json-result">{JSON.stringify(result, null, 2)}</pre>
+          
             <p className="agr-result-note">Review the method and disclaimer in the response. These current agents use rule-based estimates, not trained image models or live market/weather feeds.</p>
           </div>
         )}

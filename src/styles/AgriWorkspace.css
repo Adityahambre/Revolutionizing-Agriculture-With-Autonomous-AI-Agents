@@ -80,3 +80,106 @@
   .agr-farm-cycle { flex-direction:column; }
   .agr-dashboard { padding-left:15px; padding-right:15px; }
 }
+/* Improved readability for Crop Planning results */
+.agr-crop-results article strong {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.agr-crop-results article span {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.agr-crop-results article small {
+  font-size: 16px;
+  line-height: 1.8;
+  display: block;
+}
+/* AGRINOVA - Balanced Professional Typography */
+
+/* Agent cards */
+.agr-agent-card strong {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.agr-agent-card small {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.agr-agent-open {
+  font-size: 14px;
+  font-weight: 650;
+}
+
+/* Workspace heading */
+.agr-agent-workspace h2 {
+  font-size: 31px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+  line-height: 1.3;
+}
+
+/* Form labels */
+.agr-agent-workspace label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Input fields */
+.agr-agent-workspace input,
+.agr-agent-workspace select,
+.agr-agent-workspace textarea {
+  font-size: 15px;
+  min-height: 50px;
+}
+
+/* Submit button */
+.agr-agent-workspace button[type="submit"] {
+  font-size: 16px;
+  font-weight: 650;
+  min-height: 54px;
+}
+
+/* Crop recommendations */
+.agr-crop-results article {
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.agr-crop-results article strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #173d2b;
+}
+
+.agr-crop-results article span {
+  display: block;
+  margin-top: 7px;
+  font-size: 16px;
+  font-weight: 550;
+  line-height: 1.6;
+}
+
+.agr-crop-results article small {
+  display: block;
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #53675a;
+}
+
+@media (max-width: 768px) {
+  .agr-agent-workspace h2 {
+    font-size: 26px;
+  }
+
+  .agr-crop-results article strong {
+    font-size: 18px;
+  }
+}
