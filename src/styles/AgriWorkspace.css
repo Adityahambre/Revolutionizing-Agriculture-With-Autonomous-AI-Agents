@@ -1,0 +1,82 @@
+/* AgriNova working farmer workspace */
+.agr-farm-setup-grid { grid-template-columns: .72fr 1.28fr; gap: 42px; max-width: 1240px; }
+.agr-farm-card { width: 100%; }
+.agr-map-toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin: 10px 0 12px; }
+.agr-map-toolbar strong { color:#24372a; font-size:14px; }
+.agr-map-toolbar p { margin:4px 0 0; color:#78867c; font-size:11px; }
+.agr-secondary-button,.agr-map-footer button { display:inline-flex; align-items:center; gap:6px; border:1px solid #dce6dc; border-radius:9px; background:#fff; color:#34533c; padding:9px 11px; font-size:11px; cursor:pointer; }
+.agr-map-controls { display:flex; align-items:center; flex-wrap:wrap; gap:7px; margin:12px 0 10px; }
+.agr-map-controls button { border:1px solid #dce6dc; border-radius:8px; background:#fff; color:#526257; padding:8px 11px; font-size:11px; cursor:pointer; }
+.agr-map-controls button.active { border-color:#477953; background:#e9f2e8; color:#245638; font-weight:700; }
+.agr-map-control-spacer { flex:1; }
+.agr-map { height:390px; width:100%; overflow:hidden; border:1px solid #dce6dc; border-radius:13px; z-index:0; }
+.agr-map-footer { display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:10px 0 18px; color:#78867c; font-size:10px; }
+.agr-map-footer span { margin-right:7px; }
+.agr-area-result { display:flex; flex-direction:column; gap:3px; margin:0 0 18px; padding:13px 15px; border:1px solid #dcebdc; border-radius:10px; background:#f3f8f1; color:#365b3c; }
+.agr-area-result strong { font-size:17px; }
+.agr-area-result span,.agr-notice { font-size:11px; color:#748276; }
+.agr-notice { margin:7px 0 13px; }
+.agr-form-two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.agr-farm-card input[type="file"] { width:100%; font-size:12px; color:#657269; }
+.agr-farm-card .farm-field { margin-bottom:18px; }
+
+/* Dashboard */
+.agr-dashboard { padding-top:110px; }
+.agr-dashboard-header { max-width:1180px; width:100%; margin:0 auto 28px; display:flex; justify-content:space-between; align-items:flex-end; gap:20px; }
+.agr-dashboard-header h1 { margin:0; color:#17251b; font-size:clamp(34px,5vw,52px); letter-spacing:-2px; }
+.agr-dashboard-header p { margin:12px 0 0; color:#748078; font-size:14px; }
+.agr-edit-farm { display:inline-flex; align-items:center; gap:7px; padding:11px 14px; border:1px solid #dce6dc; border-radius:10px; background:#fff; color:#31563a; text-decoration:none; font-size:12px; font-weight:600; }
+.agr-agents-section,.agr-agent-workspace,.agr-farm-cycle { max-width:1180px; width:100%; margin:52px auto 0; }
+.agr-agent-count,.agr-rule-badge { border-radius:20px; background:#eaf2e9; color:#466b4b; padding:7px 11px; font-size:10px; font-weight:700; }
+.agr-agent-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:13px; }
+.agr-agent-card { display:flex; flex-direction:column; align-items:flex-start; min-height:178px; padding:20px; text-align:left; border:1px solid #e0e8e0; border-radius:16px; background:#fff; cursor:pointer; transition:.18s ease; }
+.agr-agent-card:hover,.agr-agent-card.selected { border-color:#709477; box-shadow:0 9px 25px rgba(27,61,38,.08); transform:translateY(-2px); }
+.agr-agent-card.selected { background:#f7fbf6; }
+.agr-agent-icon { width:40px; height:40px; display:grid; place-items:center; border-radius:11px; background:#e9f2e8; color:#376746; margin-bottom:15px; }
+.agr-agent-card strong { color:#203428; font-size:14px; }
+.agr-agent-card small { margin-top:6px; color:#78857c; font-size:11px; line-height:1.5; }
+.agr-agent-open { display:inline-flex; align-items:center; gap:5px; margin-top:auto; padding-top:13px; color:#416a49; font-size:11px; font-weight:700; }
+.agr-harvest-card { border-style:dashed; }
+.agr-workspace-heading { display:flex; align-items:center; justify-content:space-between; gap:15px; margin-bottom:17px; }
+.agr-workspace-heading h2 { margin:0; color:#1c3022; font-size:27px; letter-spacing:-1px; }
+.agr-agent-form,.agr-result-panel { padding:24px; border:1px solid #e1e8e1; border-radius:17px; background:#fff; }
+.agr-agent-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+.agr-agent-field { display:flex; flex-direction:column; gap:7px; color:#34483a; font-size:11px; font-weight:600; }
+.agr-agent-field input,.agr-agent-field select,.agr-agent-field textarea { width:100%; box-sizing:border-box; border:1px solid #dce5dc; border-radius:9px; padding:11px 12px; background:#fbfcfa; color:#26392c; font:inherit; font-weight:400; outline:none; }
+.agr-agent-field input:focus,.agr-agent-field select:focus,.agr-agent-field textarea:focus { border-color:#78977e; background:#fff; }
+.agr-upload-field small { color:#8a6b32; font-weight:400; line-height:1.5; }
+.agr-run-button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; margin-top:20px; padding:0 18px; border:0; border-radius:9px; background:#183d29; color:white; font-size:12px; font-weight:700; cursor:pointer; }
+.agr-run-button:disabled { opacity:.65; cursor:wait; }
+.agr-error { margin-top:13px; padding:12px 14px; border:1px solid #f0d2d2; border-radius:9px; background:#fff6f6; color:#a43f3f; font-size:12px; }
+.agr-result-panel { margin-top:17px; }
+.agr-result-heading { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.agr-result-heading h3 { margin:0; color:#203428; font-size:19px; }
+.agr-status { border-radius:20px; padding:6px 10px; background:#eaf2e9; color:#3e7048; font-size:10px; font-weight:700; }
+.agr-status.review { background:#fff4df; color:#92641d; }
+.agr-json-result { overflow:auto; max-height:420px; margin:15px 0 0; padding:15px; border-radius:10px; background:#17251b; color:#e3eee4; font:11px/1.65 Consolas,monospace; white-space:pre-wrap; overflow-wrap:anywhere; }
+.agr-result-note { color:#78857c; font-size:10px; line-height:1.6; }
+.agr-crop-results { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:15px; }
+.agr-crop-results article { display:flex; flex-direction:column; gap:7px; padding:13px; border:1px solid #e2eae2; border-radius:10px; }
+.agr-crop-results strong { color:#284a30; font-size:13px; text-transform:capitalize; }
+.agr-crop-results span,.agr-crop-results small { color:#728076; font-size:10px; line-height:1.5; }
+.agr-farm-cycle { display:flex; align-items:flex-start; gap:14px; margin-bottom:30px; padding:19px; border:1px solid #e0e8e0; border-radius:14px; background:#fff; color:#426448; }
+.agr-farm-cycle div { display:flex; align-items:center; gap:8px; white-space:nowrap; }
+.agr-farm-cycle p { margin:0; color:#718076; font-size:11px; line-height:1.7; }
+.agr-spin { animation:agrspin 1s linear infinite; }
+@keyframes agrspin { to { transform:rotate(360deg); } }
+
+@media(max-width:900px) {
+  .agr-farm-setup-grid { grid-template-columns:1fr; gap:28px; }
+  .agr-agent-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .agr-dashboard-header,.farm-location-card { align-items:flex-start; }
+}
+@media(max-width:650px) {
+  .agr-map { height:310px; }
+  .agr-map-toolbar { align-items:flex-start; flex-direction:column; }
+  .agr-form-two,.agr-agent-fields,.agr-crop-results { grid-template-columns:1fr; }
+  .agr-agent-grid { grid-template-columns:1fr; }
+  .agr-dashboard-header { align-items:flex-start; flex-direction:column; }
+  .agr-workspace-heading { align-items:flex-start; flex-direction:column; }
+  .agr-farm-cycle { flex-direction:column; }
+  .agr-dashboard { padding-left:15px; padding-right:15px; }
+}

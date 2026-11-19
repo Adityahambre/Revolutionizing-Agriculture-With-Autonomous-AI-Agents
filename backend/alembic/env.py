@@ -8,7 +8,7 @@ from alembic import context
 from app.core.config import settings
 from app.database.connection import Base
 from app.models.user import User
-
+from app.models.otp_challenge import OTPChallenge
 
 config = context.config
 
